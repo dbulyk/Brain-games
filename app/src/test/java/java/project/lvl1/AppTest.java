@@ -5,6 +5,7 @@ package java.project.lvl1;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import hexlet.code.App;
 
 class AppTest {
     @Test void appHasAGreeting() {
