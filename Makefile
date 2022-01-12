@@ -12,4 +12,4 @@ lint: #Проверяем стиль кода
 
 build: #Выполняем сборку проекта
 	./gradlew clean build
-	lint
+	make lint
