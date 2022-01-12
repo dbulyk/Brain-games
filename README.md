@@ -7,4 +7,4 @@
 
 Пример запуска игры:
 
-![Пример запуска игры](https://github.com/dbulyk/java-project-lvl1/image.png)
+![Пример запуска игры](https://github.com/dbulyk/java-project-lvl1/blob/main/img.png)
