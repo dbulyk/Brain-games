@@ -31,7 +31,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'hexlet.code.App'
+    mainClass = 'app.src.main.java.hexlet.code.App'
 }
 
 tasks.named('test') {

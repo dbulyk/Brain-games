@@ -1,12 +1,15 @@
-package hexlet.code;
+package app.src.main.java.hexlet.code;
 
 import java.util.Scanner;
+import app.src.main.java.hexlet.code.games.Calc;
+import app.src.main.java.hexlet.code.games.Even;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n"
                 + "1 - Greet\n"
                 + "2 - Even\n"
+                + "3 - Calc\n"
                 + "0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
@@ -14,21 +17,16 @@ public class App {
 
         switch (gameNum) {
             case 1:
-                System.out.println(getGreeting());
+                Engine.getGreeting();
                 break;
             case 2:
                 Even.isEven();
                 break;
+            case 3:
+                Calc.calculate();
+                break;
             default:
                 System.exit(0);
         }
-    }
-
-
-    public static String getGreeting() {
-        System.out.println("Welcome to the Brain Games!\n"
-                + "May I have your name?");
-        String greeting = "Hello, " + Cli.getName() + "!";
-        return greeting;
     }
 }
