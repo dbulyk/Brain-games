@@ -5,6 +5,10 @@
 
 [![Makefile CI](https://github.com/dbulyk/java-project-lvl1/actions/workflows/makefile.yml/badge.svg?branch=main&event=push)](https://github.com/dbulyk/java-project-lvl1/actions/workflows/makefile.yml)
 
-Пример запуска игры:
+Примеры запуска игр:
 
-![Пример запуска игры](https://github.com/dbulyk/java-project-lvl1/blob/main/img.png)
+![Пример запуска игры "Простые числа"](https://github.com/dbulyk/java-project-lvl1/blob/main/Even.png)
+
+![Пример запуска игры "Калькулятор"](https://github.com/dbulyk/java-project-lvl1/blob/main/Calc.png)
+
+![Пример запуска игры "Наибольший общий делитель"](https://github.com/dbulyk/java-project-lvl1/blob/main/GCD.png)

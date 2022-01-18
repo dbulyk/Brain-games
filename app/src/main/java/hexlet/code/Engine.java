@@ -26,18 +26,25 @@ public class Engine {
 
     public static String makeQuestion(String question) {
         System.out.println("Question: " + question);
-        String input = scan();
+        String input = scanString();
         System.out.println("Your answer: " + input);
         return input;
     }
 
     public static void congrats() {
         System.out.println("Congratulations, " + name + "!");
+        System.exit(0);
     }
 
-    public static String scan() {
+    public static String scanString() {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         return input;
+    }
+
+    public static int scanInt() {
+        Scanner scanner = new Scanner(System.in);
+        int gameNum = scanner.nextInt();
+        return gameNum;
     }
 }
