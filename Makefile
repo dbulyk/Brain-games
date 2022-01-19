@@ -4,6 +4,9 @@ install: #Очищаем предыдущую сборку
 run-dist: #Выполняем запуск файла
 	./gradlew run
 
+chmod permissions: #Даем разрешение на запуск файла
+	chmod +x ./gradlew
+
 check-updates: #Проверяем обновления зависимостей
 	./gradlew dependencyUpdates
 
