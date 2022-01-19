@@ -3,6 +3,7 @@ package app.src.main.java.hexlet.code;
 import app.src.main.java.hexlet.code.games.Calc;
 import app.src.main.java.hexlet.code.games.Even;
 import app.src.main.java.hexlet.code.games.GCD;
+import app.src.main.java.hexlet.code.games.Progression;
 
 public class App {
     public static void main(String[] args) {
@@ -12,6 +13,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit""");
 
         int gameNum = Engine.scanInt();
@@ -21,6 +23,7 @@ public class App {
             case 2 -> Even.isEven();
             case 3 -> Calc.calculate();
             case 4 -> GCD.gcd();
+            case 5 -> Progression.progression();
             default -> System.exit(0);
         }
     }

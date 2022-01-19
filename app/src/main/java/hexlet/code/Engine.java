@@ -38,13 +38,11 @@ public class Engine {
 
     public static String scanString() {
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        return input;
+        return sc.nextLine();
     }
 
     public static int scanInt() {
         Scanner scanner = new Scanner(System.in);
-        int gameNum = scanner.nextInt();
-        return gameNum;
+        return scanner.nextInt();
     }
 }

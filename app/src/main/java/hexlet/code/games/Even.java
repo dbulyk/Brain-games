@@ -9,7 +9,7 @@ public class Even {
 
         int count = 0;
         int number;
-        String correctAnswer = "";
+        String correctAnswer;
 
         while (count < Engine.COUNTER_BORDER) {
             number = (int) (Math.random() * Engine.MULTIPLIER);

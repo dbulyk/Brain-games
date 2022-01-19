@@ -12,3 +12,5 @@
 ![Пример запуска игры "Калькулятор"](https://github.com/dbulyk/java-project-lvl1/blob/main/Calc.png)
 
 ![Пример запуска игры "Наибольший общий делитель"](https://github.com/dbulyk/java-project-lvl1/blob/main/GCD.png)
+
+![Пример запуска игры "Прогрессия"](https://github.com/dbulyk/java-project-lvl1/blob/main/Progression.png)
