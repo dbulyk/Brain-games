@@ -4,6 +4,7 @@ import app.src.main.java.hexlet.code.games.Calc;
 import app.src.main.java.hexlet.code.games.Even;
 import app.src.main.java.hexlet.code.games.GCD;
 import app.src.main.java.hexlet.code.games.Progression;
+import app.src.main.java.hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -14,6 +15,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
 
         int gameNum = Engine.scanInt();
@@ -24,6 +26,7 @@ public class App {
             case 3 -> Calc.calculate();
             case 4 -> GCD.gcd();
             case 5 -> Progression.progression();
+            case 6 -> Prime.isPrime();
             default -> System.exit(0);
         }
     }

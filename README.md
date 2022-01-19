@@ -14,3 +14,5 @@
 ![Пример запуска игры "Наибольший общий делитель"](https://github.com/dbulyk/java-project-lvl1/blob/main/GCD.png)
 
 ![Пример запуска игры "Прогрессия"](https://github.com/dbulyk/java-project-lvl1/blob/main/Progression.png)
+
+![Пример запуска игры "Простое число"](https://github.com/dbulyk/java-project-lvl1/blob/main/isPrime.png)
