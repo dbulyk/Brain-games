@@ -29,7 +29,7 @@ public class Progression {
                     progress[i] = "..";
                     correctAnswer = String.valueOf(number + numberProgression);
                 }
-                 number += numberProgression;
+                number += numberProgression;
             }
 
             for (String num : progress) {
