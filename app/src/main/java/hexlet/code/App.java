@@ -20,13 +20,26 @@ public class App {
         int gameNum = Engine.scanInt();
 
         switch (gameNum) {
-            case Engine.GET_GREETING -> Engine.getGreeting();
-            case Engine.IS_EVEN -> Even.isEven();
-            case Engine.CALCULATE -> Calc.calculate();
-            case Engine.GCD -> GCD.gcd();
-            case Engine.PROGRESSION -> Progression.progression();
-            case Engine.IS_PRIME -> Prime.isPrime();
-            default -> System.exit(0);
+            case Engine.GET_GREETING :
+                Engine.getGreeting();
+                break;
+            case Engine.IS_EVEN :
+                Even.isEven();
+
+            case Engine.CALCULATE :
+                Calc.calculate();
+                break;
+            case Engine.GCD :
+                GCD.gcd();
+                break;
+            case Engine.PROGRESSION :
+                Progression.progression();
+                break;
+            case Engine.IS_PRIME :
+                Prime.isPrime();
+                break;
+            default :
+                System.exit(0);
         }
     }
 }

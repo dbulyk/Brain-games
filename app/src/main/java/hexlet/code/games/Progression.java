@@ -11,6 +11,7 @@ public class Progression {
         String[] progress = new String[arrayLength];
         int count = 0;
         int number;
+        int numberProgression;
         int missedNumber;
         String correctAnswer = "";
         StringBuilder question;
@@ -19,15 +20,16 @@ public class Progression {
             question = new StringBuilder();
             missedNumber = (int) (Math.random() * progress.length);
             number = (int) (Math.random() * Engine.MULTIPLIER);
+            numberProgression = number;
 
             for (int i = 0; i < progress.length; i++) {
                 if (i != missedNumber) {
-                    progress[i] = String.valueOf(number);
+                    progress[i] = String.valueOf(number + numberProgression);
                 } else {
                     progress[i] = "..";
-                    correctAnswer = String.valueOf(number);
+                    correctAnswer = String.valueOf(number + numberProgression);
                 }
-                number += number;
+                 number += numberProgression;
             }
 
             for (String num : progress) {

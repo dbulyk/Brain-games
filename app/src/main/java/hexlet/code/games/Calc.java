@@ -23,11 +23,17 @@ public class Calc {
             String input = Engine.makeQuestion((number1 + " " + operation[operationNum] + " "
                     + number2));
 
-            correctAnswer = switch (operationNum) {
-                case 1 -> String.valueOf(number1 + number2);
-                case 2 -> String.valueOf(number1 - number2);
-                default -> String.valueOf(number1 * number2);
-            };
+            switch (operationNum) {
+                case 1 :
+                    correctAnswer = String.valueOf(number1 + number2);
+                    break;
+                case 2 :
+                    correctAnswer = String.valueOf(number1 - number2);
+                    break;
+                default :
+                    correctAnswer = String.valueOf(number1 * number2);
+                    break;
+            }
             if (input.equals(correctAnswer)) {
                 Engine.correctAnswer();
             } else {
