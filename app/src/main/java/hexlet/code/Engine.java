@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Engine {
     public static final int COUNTER_BORDER = 3;
     public static final int MULTIPLIER = 100;
+    public static final int GET_GREETING = 1;
+    public static final int IS_EVEN = 2;
+    public static final int CALCULATE = 3;
+    public static final int GCD = 4;
+    public static final int PROGRESSION = 5;
+    public static final int IS_PRIME = 6;
     private static String name;
 
     public static void getGreeting() {

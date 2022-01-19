@@ -4,10 +4,11 @@ import app.src.main.java.hexlet.code.Engine;
 
 public class Progression {
     public static void progression() {
+        final int arrayLength = 10;
         Engine.getGreeting();
         System.out.println("What number is missing in the progression?");
 
-        String[] progress = new String[10];
+        String[] progress = new String[arrayLength];
         int count = 0;
         int number;
         int missedNumber;
