@@ -1,6 +1,6 @@
-package src.main.java.hexlet.code.games;
+package hexlet.code.games;
 
-import src.main.java.hexlet.code.Engine;
+import hexlet.code.Engine;
 
 public class Even {
     public static void isEven() {

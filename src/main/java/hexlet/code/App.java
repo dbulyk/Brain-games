@@ -1,10 +1,10 @@
-package src.main.java.hexlet.code;
+package hexlet.code;
 
-import src.main.java.hexlet.code.games.Calc;
-import src.main.java.hexlet.code.games.Even;
-import src.main.java.hexlet.code.games.GCD;
-import src.main.java.hexlet.code.games.Progression;
-import src.main.java.hexlet.code.games.Prime;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
