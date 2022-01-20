@@ -22,6 +22,9 @@ public class Prime {
                 }
             }
 
+            if (number == 0 || number == 1) {
+                correctAnswer = "no";
+            }
 
             if (input.equals(correctAnswer)) {
                 Engine.correctAnswer();
