@@ -16,13 +16,12 @@ public class Prime {
             String input = Engine.makeQuestion(String.valueOf(number));
             correctAnswer = "yes";
 
-            if (number != 0 && number != 1) {
-                for (int i = 2; i < number / 2; i++) {
-                    if (number % i == 0) {
-                        correctAnswer = "no";
-                    }
+            for (int i = 2; i < number / 2; i++) {
+                if (number % i == 0) {
+                    correctAnswer = "no";
                 }
             }
+
 
             if (input.equals(correctAnswer)) {
                 Engine.correctAnswer();
