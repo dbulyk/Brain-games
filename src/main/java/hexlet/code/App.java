@@ -7,6 +7,12 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
 public class App {
+    public static final int GET_GREETING = 1;
+    public static final int IS_EVEN = 2;
+    public static final int CALCULATE = 3;
+    public static final int GCD_NUM = 4;
+    public static final int PROGRESSION = 5;
+    public static final int IS_PRIME = 6;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n"
                            + "1 - Greet\n"
@@ -20,22 +26,25 @@ public class App {
         int gameNum = Engine.scanInt();
 
         switch (gameNum) {
-            case Engine.GET_GREETING :
-                Engine.getGreeting();
+            case GET_GREETING :
+                System.out.println("Welcome to the Brain Games!\n"
+                        + "May I have your name?");
+                String name = Engine.scanString();
+                System.out.println("Hello, " + name + "!");
                 break;
-            case Engine.IS_EVEN :
+            case IS_EVEN :
                 Even.isEven();
-
-            case Engine.CALCULATE :
+                break;
+            case CALCULATE :
                 Calc.calculate();
                 break;
-            case Engine.GCD :
+            case GCD_NUM :
                 GCD.gcd();
                 break;
-            case Engine.PROGRESSION :
+            case PROGRESSION :
                 Progression.progression();
                 break;
-            case Engine.IS_PRIME :
+            case IS_PRIME :
                 Prime.isPrime();
                 break;
             default :

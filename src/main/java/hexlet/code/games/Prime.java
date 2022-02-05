@@ -3,37 +3,29 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
+    private static final String DESC = "Answer 'yes' if given number is prime. Otherwise answer 'no'.\n";
     public static void isPrime() {
-        Engine.getGreeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
-
-        int count = 0;
         int number;
+        int count = 0;
         String correctAnswer;
-
+        String[][] conditions = new String[Engine.ARRAY_SIZE][2];
         while (count < Engine.COUNTER_BORDER) {
             number = (int) (Math.random() * Engine.MULTIPLIER);
-            String input = Engine.makeQuestion(String.valueOf(number));
             correctAnswer = "yes";
-
             for (int i = 2; i < number / 2; i++) {
                 if (number % i == 0) {
                     correctAnswer = "no";
+                    break;
                 }
             }
 
             if (number == 0 || number == 1) {
                 correctAnswer = "no";
             }
-
-            if (input.equals(correctAnswer)) {
-                Engine.correctAnswer();
-            } else {
-                Engine.incorrectAnswer(input, correctAnswer);
-            }
+            conditions[count][0] = String.valueOf(number);
+            conditions[count][1] = correctAnswer;
             count++;
         }
-        Engine.congrats();
-        System.exit(0);
+        Engine.runGame(conditions, DESC);
     }
 }

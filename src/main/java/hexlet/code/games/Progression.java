@@ -3,11 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+    private static final String DESC = "What number is missing in the progression?";
     public static void progression() {
         final int arrayLength = 10;
-        Engine.getGreeting();
-        System.out.println("What number is missing in the progression?");
-
         String[] progress = new String[arrayLength];
         int count = 0;
         int number;
@@ -15,6 +13,7 @@ public class Progression {
         int missedNumber;
         String correctAnswer = "";
         StringBuilder question;
+        String[][] conditions = new String[hexlet.code.Engine.ARRAY_SIZE][2];
 
         while (count < Engine.COUNTER_BORDER) {
             question = new StringBuilder();
@@ -36,15 +35,11 @@ public class Progression {
                 question.append(num).append(" ");
             }
 
-            String input = Engine.makeQuestion(question.toString().trim());
-            if (input.equals(correctAnswer)) {
-                Engine.correctAnswer();
-            } else {
-                Engine.incorrectAnswer(input, correctAnswer);
-            }
+            String input = question.toString().trim();
+            conditions[count][0] = input;
+            conditions[count][1] = correctAnswer;
             count++;
         }
-        Engine.congrats();
-        System.exit(0);
+        Engine.runGame(conditions, DESC);
     }
 }

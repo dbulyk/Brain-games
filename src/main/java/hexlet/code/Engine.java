@@ -4,40 +4,31 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int COUNTER_BORDER = 3;
+    public static final int ARRAY_SIZE = 3;
     public static final int MULTIPLIER = 100;
-    public static final int GET_GREETING = 1;
-    public static final int IS_EVEN = 2;
-    public static final int CALCULATE = 3;
-    public static final int GCD = 4;
-    public static final int PROGRESSION = 5;
-    public static final int IS_PRIME = 6;
-    private static String name;
 
-    public static void getGreeting() {
+    public static void runGame(String[][] cond, String gameDescription) {
         System.out.println("Welcome to the Brain Games!\n"
                 + "May I have your name?");
-        name = scanString();
+        String name = scanString();
         System.out.println("Hello, " + name + "!");
-    }
+        System.out.println(gameDescription);
 
-    public static void correctAnswer() {
-        System.out.println("Correct!");
-    }
+        String input;
 
-    public static void incorrectAnswer(String answer, String correctAnswer) {
-        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'."
-                + " Let's try again, " + name + "!");
-        System.exit(0);
-    }
+        for (int i = 0; i < COUNTER_BORDER; i++) {
+            System.out.println("Question: " + cond[i][0]);
+            input = scanString();
+            System.out.println("Your answer: " + input);
 
-    public static String makeQuestion(String question) {
-        System.out.println("Question: " + question);
-        String input = scanString();
-        System.out.println("Your answer: " + input);
-        return input;
-    }
-
-    public static void congrats() {
+            if (input.equals(cond[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + input + "' is wrong answer ;(. Correct answer was '"
+                        + cond[i][1] + "'." + " Let's try again, " + name + "!");
+                System.exit(0);
+            }
+        }
         System.out.println("Congratulations, " + name + "!");
         System.exit(0);
     }
@@ -51,4 +42,5 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
+
 }

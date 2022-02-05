@@ -3,34 +3,25 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
+    private static final String DESC = "Answer 'yes' if number even otherwise answer 'no'.";
     public static void isEven() {
-        Engine.getGreeting();
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.\n");
-
         int count = 0;
         int number;
         String correctAnswer;
+        String[][] conditions = new String[Engine.ARRAY_SIZE][2];
 
         while (count < Engine.COUNTER_BORDER) {
             number = (int) (Math.random() * Engine.MULTIPLIER);
-
-            String input = Engine.makeQuestion(String.valueOf(number));
 
             if (number % 2 == 0) {
                 correctAnswer = "yes";
             } else {
                 correctAnswer = "no";
             }
-
-            if (number % 2 == 0 && input.equals(correctAnswer)
-                    || number % 2 != 0 && input.equals(correctAnswer)) {
-                Engine.correctAnswer();
-            } else {
-                Engine.incorrectAnswer(input, correctAnswer);
-            }
+            conditions[count][0] = String.valueOf(number);
+            conditions[count][1] = correctAnswer;
             count++;
         }
-        Engine.congrats();
-        System.exit(0);
+        Engine.runGame(conditions, DESC);
     }
 }

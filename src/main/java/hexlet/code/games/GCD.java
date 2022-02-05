@@ -3,14 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
+    private static final String DESC = "Find the greatest common divisor of given numbers.";
     public static void gcd() {
-        Engine.getGreeting();
-        System.out.println("Find the greatest common divisor of given numbers.");
-
         int count = 0;
         String correctDivider = "";
         int number1;
         int number2;
+        String[][] conditions = new String[Engine.ARRAY_SIZE][2];
         while (count < Engine.COUNTER_BORDER) {
             number1 = (int) (Math.random() * Engine.MULTIPLIER);
             number2 = (int) (Math.random() * Engine.MULTIPLIER);
@@ -21,14 +20,11 @@ public class GCD {
                 }
             }
 
-            String input = Engine.makeQuestion(number1 + " " + number2);
-            if (input.equals(correctDivider)) {
-                Engine.correctAnswer();
-            } else {
-                Engine.incorrectAnswer(input, correctDivider);
-            }
+            String answer = number1 + " " + number2;
+            conditions[count][0] = answer;
+            conditions[count][1] = correctDivider;
             count++;
         }
-        Engine.congrats();
+        Engine.runGame(conditions, DESC);
     }
 }
