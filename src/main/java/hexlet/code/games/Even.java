@@ -12,16 +12,24 @@ public class Even {
 
         while (count < Engine.COUNTER_BORDER) {
             number = (int) (Math.random() * Engine.MULTIPLIER);
+            correctAnswer = correctAnswer(number);
 
-            if (number % 2 == 0) {
-                correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
             conditions[count][0] = String.valueOf(number);
             conditions[count][1] = correctAnswer;
             count++;
         }
         Engine.runGame(conditions, DESC);
+    }
+
+    public static String correctAnswer(int number) {
+        String correctAnswer;
+
+        if (number % 2 == 0) {
+            correctAnswer = "yes";
+        } else {
+            correctAnswer = "no";
+        }
+
+        return correctAnswer;
     }
 }
