@@ -3,34 +3,33 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int COUNTER_BORDER = 3;
-    public static final int ARRAY_SIZE = 3;
+    public static final int ROUNDS_COUNT = 3;
     public static final int MULTIPLIER = 100;
 
-    public static void runGame(String[][] cond, String gameDescription) {
+    public static String runGame(String[][] cond, String gameDescription) {
         System.out.println("Welcome to the Brain Games!\n"
                 + "May I have your name?");
         String name = scanString();
         System.out.println("Hello, " + name + "!");
         System.out.println(gameDescription);
 
-        String input;
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            String question = cond[i][0];
+            String correctAnswer = cond[i][1];
 
-        for (int i = 0; i < COUNTER_BORDER; i++) {
-            System.out.println("Question: " + cond[i][0]);
-            input = scanString();
-            System.out.println("Your answer: " + input);
+            System.out.println("Question: " + question + "\n"
+                    + "Your answer: ");
+            String userAnswer = scanString();
+            System.out.println(userAnswer);
 
-            if (input.equals(cond[i][1])) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + input + "' is wrong answer ;(. Correct answer was '"
-                        + cond[i][1] + "'." + " Let's try again, " + name + "!");
-                System.exit(0);
+            if (!userAnswer.equals(correctAnswer)) {
+                return "'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'." + " Let's try again, " + name + "!";
+
             }
+            System.out.println("Correct!");
         }
-        System.out.println("Congratulations, " + name + "!");
-        System.exit(0);
+        return "Congratulations, " + name + "!";
     }
 
     public static String scanString() {

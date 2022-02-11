@@ -1,40 +1,45 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     private static final String DESC = "What is the result of the expression?";
-    public static void calculate() {
-        int number1;
-        int number2;
-        int operationNum;
+    private static final char[] OPERATION = {'*', '+', '-'};
+    private static final int MIN_NUM = 1;
+    private static final int MAX_NUM = 100;
+
+    public static void runGame() {
         int count = 0;
-        char[] operation = {'*', '+', '-'};
-        final int multiplierOperation = operation.length;
-        String[][] conditions = new String[Engine.ARRAY_SIZE][2];
-        String correctAnswer;
-        while (count < Engine.COUNTER_BORDER) {
-            number1 = (int) (Math.random() * Engine.MULTIPLIER);
-            number2 = (int) (Math.random() * Engine.MULTIPLIER);
-            operationNum = (int) (Math.random() * multiplierOperation);
-            String answer = (number1 + " " + operation[operationNum] + " "
+        final int multiplierOperation = OPERATION.length;
+        String[][] conditions = new String[Engine.ROUNDS_COUNT][2];
+
+        while (count < Engine.ROUNDS_COUNT) {
+            int number1 = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
+            int number2 = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
+            int operationNum = (int) (Math.random() * multiplierOperation);
+            String answer = (number1 + " " + OPERATION[operationNum] + " "
                     + number2);
 
-            switch (operationNum) {
-                case 1 :
-                    correctAnswer = String.valueOf(number1 + number2);
-                    break;
-                case 2 :
-                    correctAnswer = String.valueOf(number1 - number2);
-                    break;
-                default :
-                    correctAnswer = String.valueOf(number1 * number2);
-                    break;
-            }
             conditions[count][0] = answer;
-            conditions[count][1] = correctAnswer;
+            conditions[count][1] = getCorrectAnswer(number1, number2, OPERATION[operationNum]);
             count++;
         }
-        Engine.runGame(conditions, DESC);
+        System.out.println(Engine.runGame(conditions, DESC));
+    }
+    private static String getCorrectAnswer(int num1, int num2, char operation) {
+        String correctAnswer;
+        switch (operation) {
+            case '+' :
+                correctAnswer = String.valueOf(num1 + num2);
+                break;
+            case '-' :
+                correctAnswer = String.valueOf(num1 - num2);
+                break;
+            default :
+                correctAnswer = String.valueOf(num1 * num2);
+                break;
+        }
+        return correctAnswer;
     }
 }

@@ -6,6 +6,8 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
+import java.util.Scanner;
+
 public class App {
     public static final int GET_GREETING = 1;
     public static final int IS_EVEN = 2;
@@ -13,6 +15,8 @@ public class App {
     public static final int GCD_NUM = 4;
     public static final int PROGRESSION = 5;
     public static final int IS_PRIME = 6;
+    public static final int GOODBYE = 0;
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n"
                            + "1 - Greet\n"
@@ -23,32 +27,37 @@ public class App {
                            + "6 - Prime\n"
                            + "0 - Exit");
 
-        int gameNum = Engine.scanInt();
+        Scanner scanner = new Scanner(System.in);
+        int gameNum = scanner.nextInt();
 
         switch (gameNum) {
             case GET_GREETING :
                 System.out.println("Welcome to the Brain Games!\n"
                         + "May I have your name?");
-                String name = Engine.scanString();
+                String name = Cli.getName();
                 System.out.println("Hello, " + name + "!");
                 break;
             case IS_EVEN :
-                Even.isEven();
+                Even.runGame();
                 break;
             case CALCULATE :
-                Calc.calculate();
+                Calc.runGame();
                 break;
             case GCD_NUM :
-                GCD.gcd();
+                GCD.runGame();
                 break;
             case PROGRESSION :
-                Progression.progression();
+                Progression.runGame();
                 break;
             case IS_PRIME :
-                Prime.isPrime();
+                Prime.runGame();
+                break;
+            case GOODBYE :
+                System.out.println("Goodbye");
                 break;
             default :
-                System.exit(0);
+                System.out.println("The entered number is incorrect");
+                break;
         }
     }
 }

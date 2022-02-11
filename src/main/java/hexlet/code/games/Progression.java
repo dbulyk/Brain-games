@@ -1,25 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
-    private static final String DESC = "What number is missing in the progression?";
+    private static final String DESC = "What number is missing in the runGame?";
     private static String correctAnswer = "";
-    public static void progression() {
+    private static final int MIN_NUM = 1;
+    private static final int MAX_NUM = 100;
+
+
+    public static void runGame() {
         final int arrayLength = 10;
         int count = 0;
-        int number;
-        int stepProgression;
-        String[] progress;
-        StringBuilder question;
-        String[][] conditions = new String[Engine.ARRAY_SIZE][2];
+        String[][] conditions = new String[Engine.ROUNDS_COUNT][2];
 
-        while (count < Engine.COUNTER_BORDER) {
-            question = new StringBuilder();
-            number = (int) (Math.random() * Engine.MULTIPLIER);
-            stepProgression = number;
+        while (count < Engine.ROUNDS_COUNT) {
+            StringBuilder question = new StringBuilder();
+            int number = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
+            int stepProgression = number;
 
-            progress = makeProgression(number, stepProgression, arrayLength);
+            String[] progress = makeProgression(number, stepProgression, arrayLength);
 
             for (String num : progress) {
                 question.append(num).append(" ");
@@ -30,7 +31,7 @@ public class Progression {
             conditions[count][1] = correctAnswer;
             count++;
         }
-        Engine.runGame(conditions, DESC);
+        System.out.println(Engine.runGame(conditions, DESC));
     }
 
     public static String[] makeProgression(int number, int stepProgression, int progressLength) {
