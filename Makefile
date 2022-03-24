@@ -15,4 +15,5 @@ clean: #Выполняем очищение проекта от предыдущ
 	./gradlew clean
 
 build: #Выполняем сборку проекта
+	./gradlew clean build
 	make lint
