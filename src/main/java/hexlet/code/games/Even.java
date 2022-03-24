@@ -4,34 +4,33 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
-    private static final String DESC = "Answer 'yes' if number even otherwise answer 'no'.";
-    private static final int MIN_NUM = 1;
+    private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final int MIN_NUM = 0;
     private static final int MAX_NUM = 100;
 
     public static void runGame() {
-        int count = 0;
-        String[][] conditions = new String[Engine.ROUNDS_COUNT][2];
+        String[][] roundsData = new String[Engine.ROUNDS_COUNT][2];
 
-        while (count < Engine.ROUNDS_COUNT) {
-            int number = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
-            String correctAnswer = correctAnswer(number);
-
-            conditions[count][0] = String.valueOf(number);
-            conditions[count][1] = correctAnswer;
-            count++;
+        for (int i = 0; i < roundsData.length; i++) {
+            roundsData[i] = generateRoundData();
         }
-        System.out.println(Engine.runGame(conditions, DESC));
+        System.out.println(Engine.runGame(roundsData, DESCRIPTION));
     }
 
     public static String correctAnswer(int number) {
-        String correctAnswer;
-
         if (number % 2 == 0) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
+            return "yes";
         }
+        return "no";
+    }
 
-        return correctAnswer;
+    private static String[] generateRoundData() {
+        String[] roundData = new String[2];
+        int number = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
+        String correctAnswer = correctAnswer(number);
+
+        roundData[0] = String.valueOf(number);
+        roundData[1] = correctAnswer;
+        return roundData;
     }
 }

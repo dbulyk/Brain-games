@@ -32,10 +32,7 @@ public class App {
 
         switch (gameNum) {
             case GET_GREETING :
-                System.out.println("Welcome to the Brain Games!\n"
-                        + "May I have your name?");
-                String name = Cli.getName();
-                System.out.println("Hello, " + name + "!");
+                Cli.greet();
                 break;
             case IS_EVEN :
                 Even.runGame();
@@ -59,5 +56,6 @@ public class App {
                 System.out.println("The entered number is incorrect");
                 break;
         }
+        scanner.close();
     }
 }
