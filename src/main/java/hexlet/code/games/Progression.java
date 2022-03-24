@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Progression {
     private static final String DESCRIPTION = "What number is missing in the runGame?";
-    private static final int MIN_NUM = 1;
+    private static final int MIN_NUM = 0;
     private static final int MAX_NUM = 100;
 
     public static void runGame() {
