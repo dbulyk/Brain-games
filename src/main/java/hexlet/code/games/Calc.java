@@ -39,7 +39,7 @@ public class Calc {
         int number1 = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
         int number2 = Utils.generateRandomNum(MIN_NUM, MAX_NUM);
 
-        int operationNum = Utils.generateRandomNum(MIN_NUM, OPERATIONS.length);
+        int operationNum = Utils.generateRandomNum(0, OPERATIONS.length);
         String question = (number1 + " " + OPERATIONS[operationNum] + " "
                 + number2);
         roundData[0] = question;
