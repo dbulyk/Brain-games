@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Even {
     private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
-    private static final int MIN_NUM = 0;
+    private static final int MIN_NUM = 1;
     private static final int MAX_NUM = 100;
 
     public static void runGame() {

@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
     private static final String DESCRIPTION = "What is the result of the expression?";
     private static final char[] OPERATIONS = {'*', '+', '-'};
-    private static final int MIN_NUM = 0;
+    private static final int MIN_NUM = 1;
     private static final int MAX_NUM = 100;
 
     public static void runGame() {
